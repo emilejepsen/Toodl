@@ -80,7 +80,11 @@ export default function ChildrenSetupPage() {
   };
 
   const canContinue = children.length > 0;
-  const formValid = formData.name && formData.age && formData.gender && formData.readingLevel && formData.avatar;
+  const formValid = formData.name.trim() !== '' && 
+                    formData.age.trim() !== '' && 
+                    formData.gender !== '' && 
+                    formData.readingLevel !== '' && 
+                    formData.avatar !== '';
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">

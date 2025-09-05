@@ -146,9 +146,33 @@ export const theme = {
         lg: 'p-8',
       },
       heights: {
-        // Standard minimum højde for grid-kort (familiekort og "Tilføj person")
         gridItem: '240px'
       }
+    },
+    navigation: {
+      height: 'h-16',
+      padding: 'px-6 py-4',
+      shadow: 'shadow-sm'
+    },
+    modal: {
+      overlay: 'bg-black bg-opacity-50',
+      container: 'max-h-[90vh] overflow-y-auto'
+    },
+    avatar: {
+      sizes: {
+        sm: 'w-8 h-8',
+        base: 'w-12 h-12', 
+        lg: 'w-24 h-24',
+        xl: 'w-32 h-32'
+      },
+      colors: [
+        '#f5f0d4', // gul (Eventyr)
+        '#e8d4f0', // lilla/pink (Venskab)  
+        '#d4e8f0', // blå (Magisk)
+        '#d4f0e8', // mint grøn (Natur)
+        '#f0e8d4', // fersken/orange (Dyr)
+        '#e8f0d4'  // lime grøn (Andet)
+      ]
     }
   }
 } as const;
