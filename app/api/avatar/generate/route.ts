@@ -8,6 +8,14 @@ fal.config({
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if FAL_KEY is configured
+    if (!process.env.FAL_KEY) {
+      return NextResponse.json({ 
+        success: false, 
+        error: 'FAL_KEY ikke konfigureret. Tjek din .env.local fil.' 
+      }, { status: 500 });
+    }
+
     const body = await request.json();
     const { type, prompt, imageFile } = body;
 

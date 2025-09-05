@@ -1,15 +1,16 @@
 export interface AvatarGenerationData {
-  hairDescription: string;
-  hairColor: string;
-  facialHair: string;
-  skinTone: string;
-  eyeColor: string;
-  adultGender: string;
+  hair_description: string;
+  hair_color: string;
+  facial_hair: string;
+  skin_tone: string;
+  eye_color: string;
+  adult_gender: string;
+  age: string;
   other: string;
 }
 
 export function buildAvatarPrompt(data: AvatarGenerationData): string {
-  return `SHARP HIGH QUALITY 2D cartoon avatar, ultra crisp clean illustration, razor sharp defined shapes, ultra clean precise lines, highly detailed non-photorealistic. Same minimal child-avatar style but clearly adult. Head-and-shoulders only (top of shoulders visible), centered, eye-level. Family-friendly. Fully clothed: random top garment (crew-neck t-shirt, light button-up shirt, or sweater) in a muted, desaturated color; neckline fully covered; no bare shoulders. Character: ${data.adultGender}, adult; hair: ${data.hairDescription} in ${data.hairColor}; facial hair: ${data.facialHair}; skin tone: ${data.skinTone}; eyes: ${data.eyeColor}. Positive friendly expression (warm small smile). Adult proportions: slightly longer face, soft defined jawline, normal-sized eyes (not oversized), visible neck and slightly broader shoulders. Background: pastel circular backdrop in a randomly chosen soft hue with soft inner shadow. Extras: ${data.other}. Keep features clean and friendly; ULTRA SHARP crisp finish; MAXIMUM detail; no text or logos; PROFESSIONAL QUALITY; CRYSTAL CLEAR.`;
+  return `SHARP HIGH QUALITY 2D cartoon avatar, ultra crisp clean illustration, razor sharp defined shapes, ultra clean precise lines, highly detailed non-photorealistic. Same minimal child-avatar style but clearly adult. Head-and-shoulders only (top of shoulders visible), centered, eye-level. Family-friendly. Fully clothed: random top garment (crew-neck t-shirt, light button-up shirt, or sweater) in a muted, desaturated color; neckline fully covered; no bare shoulders. Character: ${data.adult_gender}, adult, ${data.age} years old; hair: ${data.hair_description} in ${data.hair_color}; facial hair: ${data.facial_hair}; skin tone: ${data.skin_tone}; eyes: ${data.eye_color}. Positive friendly expression (warm small smile). Adult proportions: slightly longer face, soft defined jawline, normal-sized eyes (not oversized), visible neck and slightly broader shoulders. Background: pastel circular backdrop in a randomly chosen soft hue with soft inner shadow. Extras: ${data.other}. Keep features clean and friendly; ULTRA SHARP crisp finish; MAXIMUM detail; no text or logos; PROFESSIONAL QUALITY; CRYSTAL CLEAR.`;
 }
 
 export function getFallbackAvatar(relation: string): string {
